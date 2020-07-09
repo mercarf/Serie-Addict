@@ -1,1 +1,28 @@
-<main class="page__main"></main>
+<main class="page__main">
+  <div class="container">
+    <form action="" method="POST" class="form-search" id="form-search">
+      <label for="serieName"
+        >Nombre de la serie:
+        <input
+          type="text"
+          name="input-search"
+          class="input-search"
+          placeholder="Ej: Game of thrones"
+        />
+        <button type="submit" class="button-search">Buscar</button>
+      </label>
+    </form>
+    <section class="section-favorites">
+      <div class="favorites">
+        <h3>Mis series favoritas</h3>
+        <ul class="list-favorites"></ul>
+      </div>
+    </section>
+  </div>
+  <section class="section-items">
+    <div class="items">
+      <h3>Series</h3>
+      <ul class="list-items"></ul>
+    </div>
+  </section>
+</main>

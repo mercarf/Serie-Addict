@@ -1,0 +1,19 @@
+.page__main {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+
+  .form-search {
+    margin-bottom: 30px;
+    grid-column: span 1;
+  }
+  .section-favorites {
+    grid-column: span 1;
+  }
+}
