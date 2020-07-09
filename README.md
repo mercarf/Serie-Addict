@@ -2,13 +2,12 @@
 
 # Módulo 2: Ejercicio de evaluación final
 
+Mercedes Carballal Franco. Promoción Jemison.
+
 ## Enunciado
 
-El ejercicio consiste en desarrollar una aplicación web de búsqueda de series de TV, que nos permite
-des/marcar las series como favoritas y guardarlas en local storage.
-El ejercicio también tiene una parte de maquetación con HTML y Sass, os recomendamos dedicar esfuerzo a
-la maquetación una vez terminada la parte de JavaScript, ya que los criterios de evaluación están relacionados
-con esta última.
+El ejercicio consiste en desarrollar una aplicación web de búsqueda de series de TV, que nos permite des/marcar las series como favoritas y guardarlas en local storage.
+El ejercicio también tiene una parte de maquetación con HTML y Sass, os recomendamos dedicar esfuerzo a la maquetación una vez terminada la parte de JavaScript, ya que los criterios de evaluación están relacionados con esta última.
 Vamos de definir los distintos hitos del ejercicio:
 
 ## 1. Estructura básica
@@ -23,7 +22,7 @@ La aplicación de búsqueda de series consta de dos partes:
 ## 2. Búsqueda
 
 - Al hacer clic sobre el botón de Buscar, la aplicación debe conectarse al API abierto de TVMaze
-  para búsqueda de series. Os recomendamos echar un vistazo al JSON que devuelve una petición de búsqueda para ver qué datos son los que necesitamos.
+  para búsqueda de series.
 - Para construir la URL de búsqueda hay que recoger el texto que ha introducido la usuaria en el
   campo de búsqueda.
 - Por cada show contenido en el resultado de la búsqueda hay que pintar una tarjeta donde mostramos
@@ -44,7 +43,7 @@ Para ello, al hacer clic sobre una serie debe pasar lo siguiente:
 - Las series favoritas deben seguir apareciendo a la izquierda aunque la usuaria realice otra
   búsqueda.
 
-  ![Buscador 1](./Buscador1.png)
+  ![Buscador 1](./Buscador1.PNG)
 
 ## 4. Almacenamiento local
 
@@ -58,8 +57,8 @@ Y ya sería fantástico si al final de la lista de favoritos hay un botón para 
 
 ## 6. BONUS: Afinar la maquetación
 
-Una vez terminada la parte de interacción, podemos centrarnos en la parte de maquetación donde tenéis libertad para decidir los estilo. En cualquier caso os dejamos una propuesta gráfica.
+Una vez terminada la parte de interacción, podemos centrarnos en la parte de maquetación donde tenéis libertad para decidir los estilos. En cualquier caso os dejamos una propuesta gráfica.
 
-![Buscador 1](./Buscador1.png)
+![Buscador 1](./Buscador1.PNG)
 
 **¡Al turrón!**
