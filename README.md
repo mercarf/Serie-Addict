@@ -44,6 +44,8 @@ Para ello, al hacer clic sobre una serie debe pasar lo siguiente:
 - Las series favoritas deben seguir apareciendo a la izquierda aunque la usuaria realice otra
   búsqueda.
 
+  ![Buscador 1](./Buscador1.png)
+
 ## 4. Almacenamiento local
 
 Hay que almacenar el listado de favoritos en el localStorage. De esta forma, al recargar la página el listado de favoritos se debe mostrarse.
@@ -57,5 +59,7 @@ Y ya sería fantástico si al final de la lista de favoritos hay un botón para 
 ## 6. BONUS: Afinar la maquetación
 
 Una vez terminada la parte de interacción, podemos centrarnos en la parte de maquetación donde tenéis libertad para decidir los estilo. En cualquier caso os dejamos una propuesta gráfica.
+
+![Buscador 1](./Buscador1.png)
 
 **¡Al turrón!**
