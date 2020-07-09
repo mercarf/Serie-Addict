@@ -44,7 +44,7 @@ Para ello, al hacer clic sobre una serie debe pasar lo siguiente:
 - Las series favoritas deben seguir apareciendo a la izquierda aunque la usuaria realice otra
   búsqueda.
 
-  ![Buscador 1](./Buscador1.png)
+  ![Buscador 1](./Buscador1.PNG)
 
 ## 4. Almacenamiento local
 
@@ -60,6 +60,6 @@ Y ya sería fantástico si al final de la lista de favoritos hay un botón para 
 
 Una vez terminada la parte de interacción, podemos centrarnos en la parte de maquetación donde tenéis libertad para decidir los estilo. En cualquier caso os dejamos una propuesta gráfica.
 
-![Buscador 1](./Buscador1.png)
+![Buscador 1](./Buscador1.PNG)
 
 **¡Al turrón!**
