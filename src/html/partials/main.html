@@ -1,16 +1,14 @@
 <main class="page__main">
   <div class="container">
-    <form action="" method="POST" class="form-search" id="form-search">
-      <label for="serieName"
-        >Nombre de la serie:
-        <input
-          type="text"
-          name="input-search"
-          class="input-search"
-          placeholder="Ej: Game of thrones"
-        />
-        <button type="submit" class="button-search">Buscar</button>
-      </label>
+    <form action="" method="" class="form-search" id="form-search">
+      <label for="serie-search">Nombre de la serie:</label>
+      <input
+        type="text"
+        name="serie-search"
+        class="js-input-search"
+        placeholder="Vikings"
+      />
+      <button type="submit" class="js-button-search">Buscar</button>
     </form>
     <section class="section-favorites">
       <div class="favorites">
@@ -19,10 +17,10 @@
       </div>
     </section>
   </div>
-  <section class="section-items">
-    <div class="items">
+  <section class="section-series">
+    <div class="series">
       <h3>Series</h3>
-      <ul class="list-items"></ul>
+      <ul class="js-list-series"></ul>
     </div>
   </section>
 </main>
