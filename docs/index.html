@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mercedes Carballal - Módulo 2 - Evaluación final</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/css/main.css" />
+  </head>
+
+  <body>
+    <div class="page">
+      <header class="page__header">
+        <h1>Buscador de series</h1>
+      </header>
+
+      <main class="page__main">
+        <div class="container">
+          <form action="" method="" class="form-search" id="form-search">
+            <label for="serie-search">Nombre de la serie:</label>
+            <input
+              type="text"
+              name="serie-search"
+              class="js-input-search"
+              placeholder="Vikings"
+            />
+            <button type="submit" class="js-button-search">Buscar</button>
+          </form>
+          <section class="section-favorites">
+            <div class="favorites">
+              <h3>Mis series favoritas</h3>
+              <!-- <button class="js-reset-btn">Borrar favoritos</button> -->
+              <ul class="js-list-favorites"></ul>
+            </div>
+          </section>
+        </div>
+        <section class="section-series">
+          <div class="js-series">
+            <h3>Series</h3>
+            <p class="error js-error-message"></p>
+            <ul class="js-list-series"></ul>
+          </div>
+        </section>
+      </main>
+
+      <footer class="page__footer">
+        <small>
+          &copy; Todos los derechos reservados: Mercedes Carballal
+        </small>
+      </footer>
+
+    </div>
+    <script src="./assets/js/main.js"></script>
+  </body>
+</html>
