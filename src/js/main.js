@@ -7,6 +7,9 @@ let favSeries = [];
 //Constantes
 const form = document.querySelector('.form-search');
 const inputSearch = document.querySelector('.js-input-search');
+const errorMessage = document.querySelector('.js-error-message');
+const listSeries = document.querySelector('.js-list-series');
+const listFav = document.querySelector('.js-list-favorites');
 
 // api
 
@@ -19,6 +22,7 @@ const getDataFromApi = (ev) => {
       searchSeries = data;
       if (inputSearchValue !== '') {
         paintSeriesSearch();
+        errorMessage.innerHTML = '';
       } else {
         paintError();
       }
@@ -27,8 +31,8 @@ const getDataFromApi = (ev) => {
 
 //Paint
 function paintError() {
-  const errorMessage = document.querySelector('.js-error-message');
   errorMessage.innerHTML = 'No has introducido nintun dato';
+  listSeries.innerHTML = '';
 }
 
 const paintSeriesSearch = () => {
@@ -36,17 +40,19 @@ const paintSeriesSearch = () => {
   const defaultImage =
     'https://via.placeholder.com/210x295/ffffff/666666/?text=TV';
   let codeHTML = '';
+
   for (let serieData of searchSeries) {
     const serie = serieData.show;
+    let summary = serie.summary || 'No hay informacion sobre esta serie';
 
     codeHTML += `<li class="serie js-serie" id="${serie.id}">`;
     codeHTML += `<h2 id="${serie.id}" class="serie__title">${serie.name}</h2>`;
     if (serie.image !== null) {
-      codeHTML += `<img src="${serie.image.medium}" id="${serie.id}" class="js-serie__img" alt="Serie ${serie.name}" />`;
+      codeHTML += `<img src="${serieData.show.image.medium}" id="${serie.id}" class="js-serie__img" alt="Serie ${serie.name}" />`;
     } else {
-      codeHTML += `<img src="${defaultImage}" id="${serie.id}" class="serie__img" alt="Serie ${serie.name}" />`;
+      codeHTML += `<img src="${defaultImage}" id="${serie.id}" class="js-serie__img" alt="Serie ${serie.name}" />`;
     }
-    codeHTML += `<p class="serie__summary" id="${serie.id}">${serie.summary}</p>`;
+    codeHTML += `<div class="serie-summary" id="${serie.id}">${summary}</div>`;
     codeHTML += `</li>`;
     listSeries.innerHTML = codeHTML;
   }
@@ -55,14 +61,13 @@ const paintSeriesSearch = () => {
 };
 
 const paintSeriesFav = () => {
-  const listFav = document.querySelector('.js-list-favorites');
   const defaultImage =
     'https://via.placeholder.com/210x295/ffffff/666666/?text=TV';
   let codeHTML = '';
   for (let serieData of favSeries) {
     const serie = serieData.show;
 
-    codeHTML += `<li class="serie js-fav" id="${serie.id}">`;
+    codeHTML += `<li class="fav js-fav" id="${serie.id}">`;
     codeHTML += `<h2 id="${serie.id}" class="fav__title">${serie.name}</h2>`;
     if (serie.image !== null) {
       codeHTML += `<img src="${serie.image.medium}" id="${serie.id}" class="js-fav__img" alt="Serie ${serie.name}" />`;
@@ -85,15 +90,20 @@ const handleSerieClick = (ev) => {
   const serieFind = searchSeries.find(
     (productItem) => productItem.show.id === clickedId
   );
-
+  const index = favSeries.findIndex(
+    (productItem) => productItem.show.id === clickedId
+  );
   const seriesclick = ev.currentTarget;
   seriesclick.classList.toggle('favorite');
 
   const seriefav = favSeries.find(
     (productItem) => productItem.show.id === clickedId
   );
+
   if (seriefav === undefined) {
     favSeries.push(serieFind);
+  } else {
+    favSeries.splice(index, 1);
   }
 
   console.log(serieFind);
@@ -116,7 +126,7 @@ const handleFavsClick = (ev) => {
   paintSeriesFav();
 };
 
-//-----------------LOCAL STORAGE------------------------------
+//----------------- LOCAL STORAGE ------------------------------
 
 const updateLocalStorage = () => {
   localStorage.setItem('Favorites', JSON.stringify(favSeries));
@@ -129,17 +139,18 @@ const getFromLocalStorage = () => {
     paintSeriesFav(); //Cuando tengamos favoritos guardados en LS aparecerán al refrescar en la lista de favoritos
   }
 };
-// Reset
+//------------------- Reset ------------------------------
 
-/* const btnReset = document.querySelector('.js-reset-btn');
+const btnReset = document.querySelector('.js-reset-btn');
 
 const resetCart = () => {
   favSeries = [];
   updateLocalStorage();
-  getFromLocalStorage();
+  listFav.innerHTML = '';
+  paintSeriesFav();
 };
 
-btnReset.addEventListener('click', resetCart); */
+btnReset.addEventListener('click', resetCart);
 
 // listener
 

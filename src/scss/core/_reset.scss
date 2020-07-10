@@ -353,9 +353,16 @@ template {
   color: inherit;
   text-decoration: none;
 }
-.page {
-  padding: 2rem;
+body {
   height: 100vh;
-  background-color: $color-white;
+  background-color: #e9893a;
   font-family: $font-main;
+  color: rgb(77, 47, 4);
+  // background-image: url('../../assets/images/Fondo-series.jpg');
+  background-size: cover;
+}
+.page {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
 }
