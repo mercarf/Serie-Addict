@@ -32,7 +32,7 @@ const getDataFromApi = (ev) => {
 //Paint
 // Funcion que pinta un error si el input está vacío al darle a buscar
 function paintError() {
-  errorMessage.innerHTML = 'No has introducido nintun dato';
+  errorMessage.innerHTML = '🔔 No has introducido nintun dato 🔔';
   listSeries.innerHTML = '';
 }
 

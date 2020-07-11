@@ -23,6 +23,10 @@
       border-radius: 18px;
       outline: none;
       margin-bottom: 10px;
+      &:hover {
+        border: 1px solid $color-card-selected;
+        color: $color-card-selected;
+      }
     }
   }
   .list-fav {
