@@ -4,9 +4,9 @@ const paintSeriesFav = () => {
   const defaultImage =
     'https://via.placeholder.com/210x295/ffffff/666666/?text=TV';
   let codeHTML = '';
+
   for (let serieData of favSeries) {
     const serie = serieData.show;
-
     codeHTML += `<li class="fav js-fav" id="${serie.id}">`;
     codeHTML += `<div class="fav__container">`;
     codeHTML += `<h3 id="${serie.id}" class="fav__title">${serie.name}</h3>`;
@@ -27,6 +27,7 @@ const paintSeriesFav = () => {
 const handleFavsClick = (ev) => {
   const clickedId = parseInt(ev.currentTarget.id);
   console.log(clickedId);
+
   // podriamos utilizar find index para buscar la posición del elemento a borrar
   const index = favSeries.findIndex(
     (productItem) => productItem.show.id === clickedId
@@ -46,3 +47,37 @@ const listenFavsClicks = () => {
     serieFav.addEventListener('click', handleFavsClick);
   }
 };
+
+/* PINTAR CON DOM AVANZADO */
+/*     //Elemento li
+    const liFav = document.createElement('li');
+    liFav.classList.add('fav');
+    liFav.classList.add('js-fav');
+    liFav.setAttribute('id', serie.id);
+    //Elemento div
+    const liContainer = document.createElement('div');
+    liContainer.classList.add('fav__container');
+    liFav.appendChild(liContainer);
+    //Elemento h3
+    const liFavTitle = document.createElement('h3');
+    liFavTitle.classList.add('fav__title');
+    const liFavTitleContent = document.createTextNode(serie.name);
+    liFavTitle.appendChild(liFavTitleContent);
+    liFavTitle.setAttribute('id', serie.id);
+    liContainer.appendChild(liFavTitle);
+    //Elemento i
+    const liFavIcon = document.createElement('i');
+    liFavIcon.classList.add('far');
+    liFavIcon.classList.add('fa-trash-alt');
+    liContainer.appendChild(liFavIcon);
+    //Elemento img
+    const liFavImg = document.createElement('img');
+    liFavImg.classList.add('js-fav__img');
+    if (serie.image !== null) {
+      liFavImg.setAttribute('src', serie.image.medium);
+    } else {
+      liFavImg.setAttribute('src', defaultImage);
+    }
+    liFavImg.setAttribute('alt', `Serie ${serie.name}`);
+    liFavImg.setAttribute('id', serie.id);
+    liFav.appendChild(liFavImg);*/

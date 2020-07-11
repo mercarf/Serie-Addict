@@ -46,8 +46,11 @@
         margin-bottom: 5px;
         .fav__title {
           text-align: center;
-          i {
-            text-align: right;
+        }
+        i {
+          text-align: right;
+          &:hover {
+            color: $color-card-selected;
           }
         }
       }
