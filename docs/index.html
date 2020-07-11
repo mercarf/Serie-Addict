@@ -12,51 +12,83 @@
       href="https://fonts.googleapis.com/css2?family=Allerta+Stencil&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/7fa95d1a39.js"
+      crossorigin="anonymous"
+    ></script>
     <link rel="stylesheet" href="./assets/css/main.css" />
   </head>
 
   <body>
     <div class="page">
-      <header class="page__header">
-        <h1>🍿 Serie addict 🍿</h1>
-      </header>
-
-      <main class="page__main">
-        <div class="container">
-          <form action="" method="" class="form-search" id="form-search">
-            <label for="serie-search">Nombre de la serie:</label>
-            <input
-              type="text"
-              name="serie-search"
-              class="js-input-search"
-              placeholder="Vikings"
-            />
-            <button type="submit" class="js-button-search">Buscar</button>
-          </form>
-          <section class="section-favorites">
-            <div class="favorites">
-              <h3>Mis series favoritas</h3>
-              <button class="js-reset-btn">Borrar todas las favoritos</button>
-              <ul class="js-list-favorites"></ul>
-            </div>
-          </section>
+      <aside class="page__aside">
+        <div class="favorites">
+          <h2 class="title-list-fav">Mis series favoritas</h2>
+          <button class="reset-btn js-reset-btn">
+            Borrar lista <i class="fas fa-trash-alt"></i>
+          </button>
         </div>
-        <section class="section-series">
-          <div class="js-series">
-            <h3>Series</h3>
-            <p class="error js-error-message"></p>
-            <ul class="list-series js-list-series"></ul>
-          </div>
-        </section>
-      </main>
+        <ul class="list-fav js-list-favorites"></ul>
+      </aside>
 
-      <!-- <footer class="page__footer">
-   <small>
-     &copy; Todos los derechos reservados: Mercedes Carballal
-   </small>
- </footer>
- -->
+      <div class="container">
+        <header class="page__header">
+          <h1>🍿 Serie addict 🍿</h1>
+        </header>
+
+        <hero class="page__hero">
+          <form action="" method="" class="form-search" id="form-search">
+            <label for="serie-search"
+              >Introduce el nombre de la serie molona que andas buscando:</label
+            >
+            <div class="container-search-block">
+              <div class="container-search">
+                <input
+                  type="search"
+                  name="serie-search"
+                  class="input js-input-search"
+                  placeholder="Vikings"
+                />
+                <button type="submit" class="search-btn js-button-search">
+                  <i class="fas fa-search"></i>
+                </button>
+              </div>
+              <span class="eyes">👀</span>
+            </div>
+          </form>
+        </hero>
+
+        <main class="page__main">
+          <h2>Series</h2>
+          <p class="error js-error-message"></p>
+          <ul class="list-series js-list-series"></ul>
+          <div class="container-icons">
+            <a href="http://gifgifs.com/" title="http://gifgifs.com"
+              ><img
+                src="http://gifgifs.com//animations/food-drinks/salted-snacks/Pretzel.gif"
+                alt="http://gifgifs.com"
+            /></a>
+            <a href="http://gifgifs.com/" title="http://gifgifs.com"
+              ><img
+                src="http://gifgifs.com//animations/food-drinks/salted-snacks/Popcorn.gif"
+                alt="http://gifgifs.com"
+            /></a>
+          </div>
+        </main>
+
+        <footer class="page__footer">
+          <small class="footer__copy">
+            &copy; Todos los derechos reservados: Mercedes Carballal
+          </small>
+        </footer>
+
+      </div>
     </div>
+
     <script src="./assets/js/main.js"></script>
   </body>
 </html>
