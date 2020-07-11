@@ -1,50 +1,48 @@
 .page__main {
-  flex: 1;
-  align-items: flex-start;
-  height: 60vh;
-  padding-bottom: 50px;
-
-  .section-series {
-    grid-column: span 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-left: 30px;
+  .error {
+    margin-top: 10px;
+  }
+  .list-series {
     display: flex;
     flex-direction: row;
-    justify-content: left;
-    align-items: center;
-    padding-left: 30px;
-    .error {
-      margin-top: 10px;
-    }
-    .list-series {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      text-align: center;
-      .serie {
-        background-color: rgba(243, 234, 149, 0.5);
-        color: rgb(77, 47, 4);
-        border-radius: 5px;
-        margin: 5px;
-        width: 250px;
-        height: 350px;
-        padding: 5px;
-        .js-serie__img {
-          width: 100%;
-          max-width: 150px;
-          min-height: 150px;
-          margin-top: 5px;
-        }
-        .serie-summary {
-          height: 85px;
-          margin: 5px;
-          overflow-y: scroll;
-        }
+    flex-wrap: wrap;
+    text-align: center;
+    .serie {
+      background-color: $color-card;
+      color: $color-font;
+      border-radius: 5px;
+      margin: 5px;
+      width: 250px;
+      height: 350px;
+      padding: 5px;
+      .js-serie__img {
+        width: 100%;
+        max-width: 150px;
+        min-height: 150px;
+        margin-top: 5px;
       }
-      .favorite {
-        background-color: rgb(243, 234, 149);
+      .serie-summary {
+        height: 85px;
         margin: 5px;
-        color: #11584a;
+        overflow-y: scroll;
       }
     }
+    .favorite {
+      background-color: $color-card-selected;
+      margin: 5px;
+      color: $color-font-selected;
+    }
+  }
+  .container-icons {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 100%;
   }
 }
 button {

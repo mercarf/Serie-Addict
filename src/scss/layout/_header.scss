@@ -1,12 +1,9 @@
 .page__header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   text-align: center;
   font-family: $font-secondary;
   font-size: 30px;
   letter-spacing: 5px;
   padding: 30px;
-  border-bottom: 2px solid rgb(77, 47, 4);
+  border-bottom: 2px solid $color-font;
   width: 100%;
 }
