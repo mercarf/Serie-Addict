@@ -1,9 +1,28 @@
 .page__header {
   text-align: center;
   font-family: $font-secondary;
-  font-size: 30px;
-  letter-spacing: 5px;
   padding: 30px;
   border-bottom: 2px solid $color-font;
   width: 100%;
+  .header__menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 180px;
+    cursor: pointer;
+    &:hover {
+      color: $color-card-selected;
+    }
+  }
+  .header__title {
+    font-size: 60px;
+    letter-spacing: 5px;
+  }
+}
+.transform {
+  transform: rotate(180deg);
 }

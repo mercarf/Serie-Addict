@@ -1,0 +1,32 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  color: inherit;
+  text-decoration: none;
+}
+html,
+body {
+  background-color: #e9893a;
+  font-family: $font-tertiary;
+  font-size: 20px;
+  letter-spacing: 1px;
+  color: $color-font;
+  // background-image: url('../../assets/images/Fondo-series.jpg');
+  // background-size: cover;
+}
+.page {
+  display: flex;
+  flex-direction: row;
+  min-height: 100vh;
+  .container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+}
+.hidden {
+  display: none;
+}
