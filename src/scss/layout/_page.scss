@@ -1,78 +1,49 @@
 .page__main {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  justify-content: center;
+  flex: 1;
   align-items: flex-start;
-  margin-top: 20px;
-}
-.container {
-  grid-column: span 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
+  height: 60vh;
+  padding-bottom: 50px;
 
-  .form-search {
-    margin-bottom: 30px;
-    grid-column: span 1;
-
-    label {
-      display: block;
-    }
-  }
-  .section-favorites {
-    grid-column: span 1;
-  }
-  .fav {
-    flex-direction: row;
-    text-align: center;
-    img {
-      width: 100%;
-      max-width: 150px;
-      min-height: 150px;
-      margin-top: 5px;
-    }
-  }
-}
-.section-series {
-  grid-column: span 3;
-  display: flex;
-  flex-direction: row;
-  justify-content: left;
-  align-items: center;
-  padding-left: 30px;
-  .error {
-    margin-top: 10px;
-  }
-  .list-series {
+  .section-series {
+    grid-column: span 3;
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
-    text-align: center;
-    .serie {
-      background-color: rgba(243, 234, 149, 0.5);
-      color: rgb(77, 47, 4);
-      border-radius: 5px;
-      margin: 5px;
-      width: 250px;
-      height: 350px;
-      padding: 5px;
-      .js-serie__img {
-        width: 100%;
-        max-width: 150px;
-        min-height: 150px;
-        margin-top: 5px;
-      }
-      .serie-summary {
-        height: 85px;
-        margin: 5px;
-        overflow-y: scroll;
-      }
+    justify-content: left;
+    align-items: center;
+    padding-left: 30px;
+    .error {
+      margin-top: 10px;
     }
-    .favorite {
-      background-color: rgb(243, 234, 149);
-      margin: 5px;
-      color: #11584a;
+    .list-series {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      text-align: center;
+      .serie {
+        background-color: rgba(243, 234, 149, 0.5);
+        color: rgb(77, 47, 4);
+        border-radius: 5px;
+        margin: 5px;
+        width: 250px;
+        height: 350px;
+        padding: 5px;
+        .js-serie__img {
+          width: 100%;
+          max-width: 150px;
+          min-height: 150px;
+          margin-top: 5px;
+        }
+        .serie-summary {
+          height: 85px;
+          margin: 5px;
+          overflow-y: scroll;
+        }
+      }
+      .favorite {
+        background-color: rgb(243, 234, 149);
+        margin: 5px;
+        color: #11584a;
+      }
     }
   }
 }

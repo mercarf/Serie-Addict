@@ -12,15 +12,24 @@
       href="https://fonts.googleapis.com/css2?family=Allerta+Stencil&display=swap"
       rel="stylesheet"
     />
+    <script
+      src="https://kit.fontawesome.com/7fa95d1a39.js"
+      crossorigin="anonymous"
+    ></script>
     <link rel="stylesheet" href="./assets/css/main.css" />
   </head>
 
   <body>
     <div class="page">
-      <include src="./partials/header.html"></include>
-      <include src="./partials/main.html"></include>
-      <!-- <include src="./partials/footer.html"></include> -->
+      <include src="./partials/aside.html"></include>
+      <div class="container">
+        <include src="./partials/header.html"></include>
+        <include src="./partials/hero.html"></include>
+        <include src="./partials/main.html"></include>
+        <include src="./partials/footer.html"></include>
+      </div>
     </div>
+
     <script src="./assets/js/main.js"></script>
   </body>
 </html>

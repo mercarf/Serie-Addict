@@ -1,0 +1,59 @@
+.page__aside {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  border-right: 1px solid $color-font;
+  padding: 10px;
+  text-align: center;
+  min-width: 20%;
+  .favorites {
+    width: 100%;
+    border-bottom: 1px dashed $color-font;
+    .title-list-fav {
+      margin-bottom: 10px;
+      font-size: 20px;
+    }
+    .reset-btn {
+      color: $color-font;
+      background-color: transparent;
+      border: 1px solid $color-font;
+      padding: 8px;
+      line-height: 5px;
+      border-radius: 18px;
+      outline: none;
+      margin-bottom: 10px;
+    }
+  }
+  .list-fav {
+    padding: 5px;
+    width: 100%;
+    .fav {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 5px;
+      padding-right: 10px;
+
+      .fav__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 5px;
+        .fav__title {
+          text-align: center;
+          i {
+            text-align: right;
+          }
+        }
+      }
+
+      img {
+        width: 150px;
+        border-radius: 5px;
+        border: 2px solid $color-font;
+        margin-right: 5px;
+      }
+    }
+  }
+}

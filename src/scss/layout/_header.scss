@@ -1,5 +1,4 @@
 .page__header {
-  height: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -7,4 +6,7 @@
   font-family: $font-secondary;
   font-size: 30px;
   letter-spacing: 5px;
+  padding: 30px;
+  border-bottom: 2px solid rgb(77, 47, 4);
+  width: 100%;
 }
