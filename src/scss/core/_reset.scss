@@ -356,7 +356,9 @@ template {
 html,
 body {
   background-color: #e9893a;
-  font-family: $font-main;
+  font-family: $font-tertiary;
+  font-size: 20px;
+  letter-spacing: 1px;
   color: $color-font;
   // background-image: url('../../assets/images/Fondo-series.jpg');
   // background-size: cover;
