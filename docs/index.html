@@ -25,7 +25,7 @@
 
   <body>
     <div class="page">
-      <aside class="page__aside">
+      <aside class="page__aside hidden js-hidden">
         <div class="favorites">
           <h2 class="title-list-fav">Mis series favoritas</h2>
           <button class="reset-btn js-reset-btn">
@@ -37,7 +37,11 @@
 
       <div class="container">
         <header class="page__header">
-          <h1>🍿 Serie addict 🍿</h1>
+          <div class="header__menu js-arrow hidden">
+            <h4>FAVORITOS</h4>
+            <i class="js-arrowTransform fas fa-chevron-down"></i>
+          </div>
+          <h1 class="header__title">🍿 Serie addict 🍿</h1>
         </header>
 
         <hero class="page__hero">
@@ -63,20 +67,22 @@
         </hero>
 
         <main class="page__main">
-          <h2>Series</h2>
-          <p class="error js-error-message"></p>
-          <ul class="list-series js-list-series"></ul>
+          <div class="container_series">
+            <h2>Series</h2>
+            <p class="error js-error-message"></p>
+            <ul class="list-series js-list-series"></ul>
+          </div>
           <div class="container-icons">
-            <a href="http://gifgifs.com/" title="http://gifgifs.com"
-              ><img
-                src="http://gifgifs.com//animations/food-drinks/salted-snacks/Pretzel.gif"
-                alt="http://gifgifs.com"
-            /></a>
-            <a href="http://gifgifs.com/" title="http://gifgifs.com"
-              ><img
-                src="http://gifgifs.com//animations/food-drinks/salted-snacks/Popcorn.gif"
-                alt="http://gifgifs.com"
-            /></a>
+            <img
+              src="http://gifgifs.com//animations/food-drinks/salted-snacks/Pretzel.gif"
+              alt="http://gifgifs.com"
+              title="http://gifgifs.com"
+            />
+            <img
+              src="http://gifgifs.com//animations/food-drinks/salted-snacks/Popcorn.gif"
+              alt="http://gifgifs.com"
+              title="http://gifgifs.com"
+            />
           </div>
         </main>
 
