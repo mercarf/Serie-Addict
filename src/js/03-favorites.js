@@ -3,64 +3,13 @@
 const paintSeriesFav = () => {
   const defaultImage =
     'https://via.placeholder.com/210x295/ffffff/666666/?text=TV';
-  let codeHTML = '';
+  //Cada vez que pintemos partimos de un ul vacío
+  listFav.innerHTML = '';
 
   for (let serieData of favSeries) {
     const serie = serieData.show;
-    codeHTML += `<li class="fav js-fav" id="${serie.id}">`;
-    codeHTML += `<div class="fav__container">`;
-    codeHTML += `<h3 id="${serie.id}" class="fav__title">${serie.name}</h3>`;
-    codeHTML += `<i class="far fa-trash-alt"></i>`;
-    codeHTML += `</div>`;
-    if (serie.image !== null) {
-      codeHTML += `<img src="${serie.image.medium}" id="${serie.id}" class="js-fav__img" alt="Serie ${serie.name}" />`;
-    } else {
-      codeHTML += `<img src="${defaultImage}" id="${serie.id}" class="js-fav__img" alt="Serie ${serie.name}" />`;
-    }
-    codeHTML += `</li>`;
-  }
-  listFav.innerHTML = codeHTML;
-  listenFavsClicks();
-};
 
-//Lo que ocurre al clicar en los favoritos
-const handleFavsClick = (ev) => {
-  const clicked = ev.currentTarget;
-  const clickedId = parseInt(ev.currentTarget.id);
-  console.log(clickedId);
-
-  //Buscamos indice de la serie clickada
-  const indexSerie = searchSeries.findIndex(
-    (productItem) => productItem.show.id === clickedId
-  );
-  //Buscamos serie clickada
-  const clickedSerie = searchSeries.find(
-    (productItem) => productItem.show.id === clickedId
-  );
-  // podriamos utilizar find index para buscar la posición del elemento a borrar
-  const indexFav = favSeries.findIndex(
-    (productItem) => productItem.show.id === clickedId
-  );
-  console.log(indexFav);
-
-  favSeries.splice(indexFav, 1);
-
-  updateLocalStorage();
-  paintSeriesFav();
-  paintSeriesSearch();
-};
-
-// Funcion manejadora/Evento click de los favoritos
-const listenFavsClicks = () => {
-  const favsAll = document.querySelectorAll('.js-fav');
-  for (let index = 0; index < favsAll.length; index++) {
-    const serieFav = favsAll[index];
-    serieFav.addEventListener('click', handleFavsClick);
-  }
-};
-
-/* PINTAR CON DOM AVANZADO */
-/*     //Elemento li
+    //Elemento li
     const liFav = document.createElement('li');
     liFav.classList.add('fav');
     liFav.classList.add('js-fav');
@@ -91,4 +40,55 @@ const listenFavsClicks = () => {
     }
     liFavImg.setAttribute('alt', `Serie ${serie.name}`);
     liFavImg.setAttribute('id', serie.id);
-    liFav.appendChild(liFavImg);*/
+    liFav.appendChild(liFavImg);
+    //Lo metemos todo dentro del ul
+    listFav.appendChild(liFav);
+  }
+  listenFavsClicks();
+};
+
+//Lo que ocurre al clicar en los favoritos
+const handleFavsClick = (ev) => {
+  //Identificamos el elemento clickado
+  const clickedId = parseInt(ev.currentTarget.id);
+
+  //Buscamos el indice del elemento clickado
+  const indexFav = favSeries.findIndex(
+    (productItem) => productItem.show.id === clickedId
+  );
+
+  //Borramos el elemento clickado
+  favSeries.splice(indexFav, 1);
+
+  updateLocalStorage();
+  paintSeriesFav();
+  paintSeriesSearch();
+};
+
+// Funcion manejadora/Evento click de los favoritos
+const listenFavsClicks = () => {
+  const favsAll = document.querySelectorAll('.js-fav');
+  for (let index = 0; index < favsAll.length; index++) {
+    const serieFav = favsAll[index];
+    serieFav.addEventListener('click', handleFavsClick);
+  }
+};
+
+//-------------Otra opcion de pintar la lista--------------
+/* PINTAR CON INNERHTML */
+//FUERA DEL FOR
+//let codeHTML = '';
+//DENTRO DEL FOR
+// codeHTML += `<li class="fav js-fav" id="${serie.id}">`;
+// codeHTML += `<div class="fav__container">`;
+// codeHTML += `<h3 id="${serie.id}" class="fav__title">${serie.name}</h3>`;
+// codeHTML += `<i class="far fa-trash-alt"></i>`;
+// codeHTML += `</div>`;
+// if (serie.image !== null) {
+//   codeHTML += `<img src="${serie.image.medium}" id="${serie.id}" class="js-fav__img" alt="Serie ${serie.name}" />`;
+// } else {
+//   codeHTML += `<img src="${defaultImage}" id="${serie.id}" class="js-fav__img" alt="Serie ${serie.name}" />`;
+// }
+// codeHTML += `</li>`;
+//FUERA DEL FOR
+// listFav.innerHTML = codeHTML;

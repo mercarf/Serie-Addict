@@ -2,6 +2,7 @@
 //Funcion que pinta las series (titulo, imagen y resumen)
 const paintSeriesSearch = () => {
   const listSeries = document.querySelector('.js-list-series');
+  //Cada vez que pintemos partimos de un ul vacío
   listSeries.innerHTML = '';
   const defaultImage =
     'https://via.placeholder.com/210x295/ffffff/666666/?text=TV';
@@ -14,10 +15,11 @@ const paintSeriesSearch = () => {
     li.classList.add('serie');
     li.classList.add('js-serie');
     li.setAttribute('id', serie.id);
-
+    //Buscamos si el elemento está también en favoritos
     const serieFav = favSeries.find(
       (productItem) => productItem.show.id === serie.id
     );
+    //Si está en favoritos añado la clase favorite
     if (serieFav !== undefined) {
       li.classList.add('favorite');
     }
@@ -84,7 +86,6 @@ const handleSerieClick = (ev) => {
     clicked.classList.remove('favorite');
   }
 
-  console.log(clickedSerie);
   paintSeriesFav();
   updateLocalStorage();
   paintSeriesSearch();
@@ -99,6 +100,7 @@ const listenProductsClicks = () => {
   }
 };
 
+//-------------Otra opcion de pintar la lista--------------
 /* PINTAR CON INNERHTML */
 //FUERA DEL FOR
 // let codeHTML = '';
