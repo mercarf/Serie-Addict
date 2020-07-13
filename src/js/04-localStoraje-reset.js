@@ -7,9 +7,9 @@ const updateLocalStorage = () => {
 
 //Recogemos del Local Storage
 const getFromLocalStorage = () => {
-  const saveFavorites = JSON.parse(localStorage.getItem('Favorites'));
-  if (saveFavorites !== null) {
-    favSeries = saveFavorites;
+  const savedFavorites = JSON.parse(localStorage.getItem('Favorites'));
+  if (savedFavorites !== null) {
+    favSeries = savedFavorites;
     paintSeriesFav(); //Cuando tengamos favoritos guardados en LS aparecerán al refrescar en la lista de favoritos
   }
 };
@@ -18,13 +18,12 @@ const getFromLocalStorage = () => {
 // Boton reset, para borrar favoritos, Local Storage, series seleccionadas
 const btnReset = document.querySelector('.js-reset-btn');
 
-const resetFav = () => {
+const resetFav = (ev) => {
   favSeries = [];
   updateLocalStorage();
   listFav.innerHTML = '';
   paintSeriesFav();
 };
-
 btnReset.addEventListener('click', resetFav);
 
 // start app

@@ -47,29 +47,34 @@ const paintSeriesSearch = () => {
 
 // Lo que ocurre al clicar en las series
 const handleSerieClick = (ev) => {
-  // obtenemos el id del producto clickado
+  //Obtenemos el elemento clickado
+  const clicked = ev.currentTarget;
+  //Obtenemos el id del producto clickado
   const clickedId = parseInt(ev.currentTarget.id);
-  // buscamos con find
-  const serieFind = searchSeries.find(
+  //Buscamos con find la serie clickada
+  const clickedSerie = searchSeries.find(
     (productItem) => productItem.show.id === clickedId
   );
+  //Buscamos con find el favorito clickada
+  const clickedFav = favSeries.find(
+    (productItem) => productItem.show.id === clickedId
+  );
+  //Buscamos el indice del favorito
   const index = favSeries.findIndex(
     (productItem) => productItem.show.id === clickedId
   );
-  const seriesclick = ev.currentTarget;
-  seriesclick.classList.toggle('favorite');
 
-  const seriefav = favSeries.find(
-    (productItem) => productItem.show.id === clickedId
-  );
+  //A la serie clickada le añadimos la clase
 
-  if (seriefav === undefined) {
-    favSeries.push(serieFind);
+  if (clickedFav === undefined) {
+    favSeries.push(clickedSerie);
+    clicked.classList.add('favorite');
   } else {
     favSeries.splice(index, 1);
+    clicked.classList.remove('favorite');
   }
 
-  console.log(serieFind);
+  console.log(clickedSerie);
   paintSeriesFav();
   updateLocalStorage();
 };

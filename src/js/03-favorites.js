@@ -25,16 +25,26 @@ const paintSeriesFav = () => {
 
 //Lo que ocurre al clicar en los favoritos
 const handleFavsClick = (ev) => {
+  const clicked = ev.currentTarget;
   const clickedId = parseInt(ev.currentTarget.id);
   console.log(clickedId);
 
-  // podriamos utilizar find index para buscar la posición del elemento a borrar
-  const index = favSeries.findIndex(
+  //Buscamos indice de la serie clickada
+  const indexSerie = searchSeries.findIndex(
     (productItem) => productItem.show.id === clickedId
   );
-  console.log(index);
+  //Buscamos serie clickada
+  const clickedSerie = searchSeries.find(
+    (productItem) => productItem.show.id === clickedId
+  );
+  // podriamos utilizar find index para buscar la posición del elemento a borrar
+  const indexFav = favSeries.findIndex(
+    (productItem) => productItem.show.id === clickedId
+  );
+  console.log(indexFav);
 
-  favSeries.splice(index, 1);
+  favSeries.splice(indexFav, 1);
+
   updateLocalStorage();
   paintSeriesFav();
 };
