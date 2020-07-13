@@ -18,10 +18,9 @@ const getFromLocalStorage = () => {
 // Boton reset, para borrar favoritos, Local Storage, series seleccionadas
 const btnReset = document.querySelector('.js-reset-btn');
 
-const resetFav = (ev) => {
+const resetFav = () => {
   favSeries = [];
   updateLocalStorage();
-  listFav.innerHTML = '';
   paintSeriesFav();
 };
 btnReset.addEventListener('click', resetFav);

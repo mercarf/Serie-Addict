@@ -33,9 +33,8 @@ const paintSeriesSearch = () => {
     li.appendChild(liImg);
     //Elemento div
     const liText = document.createElement('div');
-    liText.classList.add('serie-summary');
-    const liTextContent = document.createTextNode(summary);
-    liText.appendChild(liTextContent);
+    liText.innerHTML = summary;
+    liText.classList.add('js-serie-summary');
     liText.setAttribute('id', serie.id);
     li.appendChild(liText);
     //Lo metemos todo dentro del ul
@@ -64,10 +63,10 @@ const handleSerieClick = (ev) => {
     (productItem) => productItem.show.id === clickedId
   );
 
-  //A la serie clickada le añadimos la clase
-
+  //Si el favorito es undefined(no se encuentra)
   if (clickedFav === undefined) {
     favSeries.push(clickedSerie);
+    //A la serie clickada le añadimos la clase
     clicked.classList.add('favorite');
   } else {
     favSeries.splice(index, 1);

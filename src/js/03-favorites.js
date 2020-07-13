@@ -18,8 +18,8 @@ const paintSeriesFav = () => {
       codeHTML += `<img src="${defaultImage}" id="${serie.id}" class="js-fav__img" alt="Serie ${serie.name}" />`;
     }
     codeHTML += `</li>`;
-    listFav.innerHTML = codeHTML;
   }
+  listFav.innerHTML = codeHTML;
   listenFavsClicks();
 };
 
@@ -44,6 +44,8 @@ const handleFavsClick = (ev) => {
   console.log(indexFav);
 
   favSeries.splice(indexFav, 1);
+
+  //Si la (indice)serie se encuentra eliminar clase
 
   updateLocalStorage();
   paintSeriesFav();
