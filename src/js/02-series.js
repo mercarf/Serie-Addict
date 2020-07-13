@@ -2,6 +2,7 @@
 //Funcion que pinta las series (titulo, imagen y resumen)
 const paintSeriesSearch = () => {
   const listSeries = document.querySelector('.js-list-series');
+  listSeries.innerHTML = '';
   const defaultImage =
     'https://via.placeholder.com/210x295/ffffff/666666/?text=TV';
 
@@ -13,6 +14,14 @@ const paintSeriesSearch = () => {
     li.classList.add('serie');
     li.classList.add('js-serie');
     li.setAttribute('id', serie.id);
+
+    const serieFav = favSeries.find(
+      (productItem) => productItem.show.id === serie.id
+    );
+    if (serieFav !== undefined) {
+      li.classList.add('favorite');
+    }
+
     //Elemento h2
     const liTitle = document.createElement('h2');
     liTitle.classList.add('serie-title');
@@ -40,7 +49,9 @@ const paintSeriesSearch = () => {
     //Lo metemos todo dentro del ul
     listSeries.appendChild(li);
   }
+
   listenProductsClicks();
+  updateLocalStorage();
   inputSearch.value = '';
 };
 
@@ -76,6 +87,7 @@ const handleSerieClick = (ev) => {
   console.log(clickedSerie);
   paintSeriesFav();
   updateLocalStorage();
+  paintSeriesSearch();
 };
 
 // Funcion manejadora/Evento click de las series

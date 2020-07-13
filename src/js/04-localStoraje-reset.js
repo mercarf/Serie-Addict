@@ -22,6 +22,10 @@ const resetFav = () => {
   favSeries = [];
   updateLocalStorage();
   paintSeriesFav();
+  const seriesAll = document.querySelectorAll('.js-serie');
+  for (const series of seriesAll) {
+    series.classList.remove('favorite');
+  }
 };
 btnReset.addEventListener('click', resetFav);
 

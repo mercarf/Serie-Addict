@@ -45,10 +45,9 @@ const handleFavsClick = (ev) => {
 
   favSeries.splice(indexFav, 1);
 
-  //Si la (indice)serie se encuentra eliminar clase
-
   updateLocalStorage();
   paintSeriesFav();
+  paintSeriesSearch();
 };
 
 // Funcion manejadora/Evento click de los favoritos
