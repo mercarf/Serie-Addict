@@ -5,6 +5,8 @@ let languages = ['English', 'Spanish', 'Portuguese'];
 
 const paintSeriesSearch = () => {
   const listSeries = document.querySelector('.js-list-series');
+  //Cada vez que pintemos partimos de un ul vacío
+  listSeries.innerHTML = '';
   const defaultImage =
     'https://via.placeholder.com/210x295/ffffff/666666/?text=TV';
 
@@ -16,6 +18,15 @@ const paintSeriesSearch = () => {
     li.classList.add('serie');
     li.classList.add('js-serie');
     li.setAttribute('id', serie.id);
+    //Buscamos si el elemento está también en favoritos
+    const serieFav = favSeries.find(
+      (productItem) => productItem.show.id === serie.id
+    );
+    //Si está en favoritos añado la clase favorite
+    if (serieFav !== undefined) {
+      li.classList.add('favorite');
+    }
+
     //Elemento h2
     const liTitle = document.createElement('h2');
     liTitle.classList.add('serie-title');
@@ -58,7 +69,9 @@ const paintSeriesSearch = () => {
     //Lo metemos todo dentro del ul
     listSeries.appendChild(li);
   }
+
   listenProductsClicks();
+  updateLocalStorage();
   inputSearch.value = '';
 };
 
@@ -91,9 +104,9 @@ const handleSerieClick = (ev) => {
     clicked.classList.remove('favorite');
   }
 
-  console.log(clickedSerie);
   paintSeriesFav();
   updateLocalStorage();
+  paintSeriesSearch();
 };
 
 const handleLogClick = () => {
@@ -113,6 +126,7 @@ const listenProductsClicks = () => {
   }
 };
 
+//-------------Otra opcion de pintar la lista--------------
 /* PINTAR CON INNERHTML */
 //FUERA DEL FOR
 // let codeHTML = '';

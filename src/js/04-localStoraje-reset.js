@@ -22,6 +22,7 @@ const resetFav = () => {
   favSeries = [];
   updateLocalStorage();
   paintSeriesFav();
+  paintSeriesSearch();
 };
 btnReset.addEventListener('click', resetFav);
 
