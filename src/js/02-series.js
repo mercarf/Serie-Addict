@@ -1,5 +1,8 @@
 /* eslint-disable strict */
 //Funcion que pinta las series (titulo, imagen y resumen)
+
+let languages = ['English', 'Spanish', 'Portuguese'];
+
 const paintSeriesSearch = () => {
   const listSeries = document.querySelector('.js-list-series');
   const defaultImage =
@@ -31,6 +34,21 @@ const paintSeriesSearch = () => {
     liImg.setAttribute('alt', `Serie ${serie.name}`);
     liImg.setAttribute('id', serie.id);
     li.appendChild(liImg);
+    //Elemento idioma
+    const lip = document.createElement('p');
+    const lipContent = document.createTextNode(serie.language);
+    lip.appendChild(lipContent);
+    li.appendChild(lip);
+
+    const indexLanguage = languages.indexOf(serie.language);
+    console.log(indexLanguage);
+    if (indexLanguage !== -1) {
+      const lip2 = document.createElement('p');
+      const lipContent = document.createTextNode('Recomendado');
+      lip2.appendChild(lipContent);
+      li.appendChild(lip2);
+    }
+
     //Elemento div
     const liText = document.createElement('div');
     liText.innerHTML = summary;
@@ -77,6 +95,14 @@ const handleSerieClick = (ev) => {
   paintSeriesFav();
   updateLocalStorage();
 };
+
+const handleLogClick = () => {
+  console.log(`Tienes ${favSeries.length} favoritos`);
+};
+
+const logBtn = document.querySelector('.js-log-btn');
+
+logBtn.addEventListener('click', handleLogClick);
 
 // Funcion manejadora/Evento click de las series
 const listenProductsClicks = () => {
