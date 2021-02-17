@@ -16,7 +16,7 @@ const listFav = document.querySelector('.js-list-favorites');
 const getDataFromApi = (ev) => {
   const inputSearchValue = inputSearch.value;
   ev.preventDefault();
-  fetch(`http://api.tvmaze.com/search/shows?q=${inputSearchValue}`)
+  fetch(`//api.tvmaze.com/search/shows?q=${inputSearchValue}`)
     .then((response) => response.json())
     .then((data) => {
       searchSeries = data;
